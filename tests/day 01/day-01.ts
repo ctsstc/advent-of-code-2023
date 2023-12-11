@@ -1,9 +1,4 @@
-async function getLines(filePath: string): Promise<string[]> {
-  const fileContents = await Bun.file(filePath).text();
-  const lines = fileContents.split("\n");
-
-  return lines;
-}
+import { getLines } from "../utilities/files";
 
 function getSumOfLines(lines: string[]): number {
   const numbers = lines.reduce((numberCollection, line) => {
