@@ -7,7 +7,8 @@
     "test:watch": "bun test --watch"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "plop": "^4.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
