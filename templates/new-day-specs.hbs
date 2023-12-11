@@ -1,0 +1,14 @@
+import { describe, expect, test } from 'bun:test'
+import { {{methodName}} } from './{{baseFileName}}'
+
+describe("Day {{dayNumber}} Part {{partNumber}}", () => {
+  test("Example", async () => {
+    const file = import.meta.resolveSync("./{{exampleFileName}}");
+    expect(await {{methodName}}(file)).toBe(123);
+  });
+
+  test("Input", async () => {
+    const file = import.meta.resolveSync("./{{inputFileName}}");
+    expect(await {{methodName}}(file)).toBe(123);
+  });
+});
