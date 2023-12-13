@@ -2,9 +2,9 @@ import { getLines } from "../../utilities/files";
 
 export async function SolveDay03Part1(filePath: string): Promise<number> {
   const lines = await getLines(filePath);
+  const grid = lines.map((line) => line.split(""));
 
   /**
-   *
    * Idea 1: use regex to grab numbers; might have to count length and initial starting location if possible.
    *  This might be complex though for calculating numbers around symbols
    *
@@ -19,6 +19,14 @@ export async function SolveDay03Part1(filePath: string): Promise<number> {
    * Thoughts:
    *  - Numbers should not be counted twice if two symbols touch the same number.
    *      - Numbers should be classified in a way that makes them unique - a starting and end range
+   *  - The top & bottom side can only contain 1 or 2 numbers
+   *    - Left and Right can only have 1 number.
+   *    - There can only then be 6 numbers max per symbol
+   *
+   * - I think having a way to classify numbers and then check if they belong to a range would work great.
+   *    - This would also mean there should be a way of classifying symbols.
+   *    - Then all symbols can check against numbers to see if they fall in its range.
+   *
    */
 
   return 0;
