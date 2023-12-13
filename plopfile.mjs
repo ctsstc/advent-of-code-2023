@@ -5,7 +5,7 @@
  */
 export default function (plop) {
   // controller generator
-  plop.setGenerator("New Day", {
+  plop.setGenerator("newDay", {
     description: "Start a new AoC day",
     prompts: [
       {

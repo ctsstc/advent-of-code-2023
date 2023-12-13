@@ -5,7 +5,8 @@
   "scripts": {
     "plop": "plop",
     "test": "bun test",
-    "test:watch": "bun test --watch"
+    "test:watch": "bun test --watch",
+    "new:day": "plop -- newDay"
   },
   "devDependencies": {
     "bun-types": "latest",
