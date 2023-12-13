@@ -4,3 +4,7 @@ export async function getLines(filePath: string): Promise<string[]> {
 
   return lines;
 }
+
+export function getGrid(lines: string[]): string[][] {
+  return lines.map((line) => line.split(""));
+}
