@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import { Grid } from "./grid";
 
-describe.only("Cell", () => {
+describe("Cell", () => {
   const grid = new Grid(["abc", "123", "xyz"]);
   const cell = grid.get(1, 1);
   const topRight = grid.get(2, 0);
