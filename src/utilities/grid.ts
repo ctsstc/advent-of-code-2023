@@ -20,4 +20,14 @@ export class Grid {
   get width() {
     return this.cells.at(0)?.length ?? 0;
   }
+
+  find(
+    predicate: (
+      value: Cell<string>,
+      index: number,
+      obj: Cell<string>[]
+    ) => boolean
+  ) {
+    return this.cells.flat().find(predicate);
+  }
 }

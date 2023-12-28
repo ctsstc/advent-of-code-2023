@@ -4,6 +4,9 @@ import { Grid } from "./grid";
 describe("Grid", () => {
   describe("populated grid", () => {
     const grid = new Grid(["abc", "123"]);
+    const cell3 = grid.get(2, 1);
+
+    if (cell3 === undefined) throw new Error("Cell not found");
 
     it("has a height of 2", () => {
       expect(grid.height).toEqual(2);
@@ -13,11 +16,17 @@ describe("Grid", () => {
       expect(grid.width).toEqual(3);
     });
 
-    describe("grid.get", () => {
+    describe("#get", () => {
       it("returns the expected cell", () => {
-        const returnedCell = grid.get(2, 1);
+        expect(cell3.value).toEqual("3");
+      });
+    });
 
-        expect(returnedCell?.value).toEqual("3");
+    describe("#find", () => {
+      const found = grid.find((cell) => cell.value === "3");
+
+      it("finds and returns the expected cell", () => {
+        expect(found?.equals(cell3)).toBeTrue();
       });
     });
   });
