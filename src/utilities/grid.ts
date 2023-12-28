@@ -1,11 +1,13 @@
 import { Cell } from "./cell";
 
-export class Grid {
-  private cells: Cell<string>[][];
+export class Grid<T> {
+  private cells: Cell<T>[][];
 
-  constructor(lines: string[]) {
+  constructor(lines: string[], mapper: (character: string) => T) {
     this.cells = lines.map((line, y) =>
-      line.split("").map((character, x) => new Cell(character, x, y, this))
+      line
+        .split("")
+        .map((character, x) => new Cell(mapper(character), x, y, this))
     );
   }
 
@@ -21,13 +23,13 @@ export class Grid {
     return this.cells.at(0)?.length ?? 0;
   }
 
-  find(
-    predicate: (
-      value: Cell<string>,
-      index: number,
-      obj: Cell<string>[]
-    ) => boolean
-  ) {
+  find(predicate: (value: Cell<T>, index: number, obj: Cell<T>[]) => boolean) {
     return this.cells.flat().find(predicate);
+  }
+}
+
+export class StringGrid extends Grid<string> {
+  constructor(lines: string[]) {
+    super(lines, (character: string) => character);
   }
 }

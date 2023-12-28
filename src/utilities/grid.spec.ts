@@ -1,9 +1,9 @@
 import { describe, expect, it } from "bun:test";
-import { Grid } from "./grid";
+import { Grid, StringGrid } from "./grid";
 
-describe("Grid", () => {
+describe("StringGrid", () => {
   describe("populated grid", () => {
-    const grid = new Grid(["abc", "123"]);
+    const grid = new StringGrid(["abc", "123"]);
     const cell3 = grid.get(2, 1);
 
     if (cell3 === undefined) throw new Error("Cell not found");
@@ -32,7 +32,7 @@ describe("Grid", () => {
   });
 
   describe("empty grid", () => {
-    const grid = new Grid([]);
+    const grid = new Grid([], (char) => char);
 
     it("has 0 height", () => {
       expect(grid.height).toEqual(0);
