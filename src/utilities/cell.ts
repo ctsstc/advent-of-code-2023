@@ -5,7 +5,7 @@ export class Cell<T> {
     public value: T,
     public x: number,
     public y: number,
-    private grid: Grid
+    private grid: Grid<T>
   ) {}
 
   up() {
