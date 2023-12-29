@@ -4,17 +4,20 @@
  * Types have been added by CTS_AE/ctsstc and contributed back to the above wiki.
  * */
 
-function* map<T, U>(a: T[], fn: (x: T) => U) {
-  for (let x of a) yield fn(x);
+function* map<T, U>(a: T[], fn: (x: T, idx?: number) => U) {
+  for (const [idx, val] of a.entries()) yield fn(val, idx);
 }
 
-function find<T>(a: Generator<T, void, unknown>, fn: (x: T) => boolean) {
+function find<T>(
+  a: Generator<T, void, unknown>,
+  fn: (x: T, idx?: number) => boolean
+) {
   for (let x of a) if (fn(x)) return x;
 }
 
 export function mapFind<T, U>(
   collection: T[],
-  mapper: (item: T) => U,
+  mapper: (item: T, idx?: number) => U,
   finder: (item: U) => boolean
 ): U | undefined {
   const mapperGenerator = map(collection, mapper);
