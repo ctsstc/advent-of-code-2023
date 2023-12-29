@@ -35,4 +35,8 @@ export class Cell<T> {
   equals(cell: Cell<T>) {
     return Object.is(this, cell);
   }
+
+  toString() {
+    return `${this.value} => x: ${this.x}, y: ${this.y}`;
+  }
 }
