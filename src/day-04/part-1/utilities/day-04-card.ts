@@ -32,6 +32,8 @@ function numbersStringToNumbers(numbersString: string): number[] {
 export function day04ScoreCard(card: Day04Card): number {
   const unionLength = cardUnion(card).length;
 
+  if (unionLength === 0) return 0;
+
   return Math.pow(2, unionLength - 1);
 }
 
