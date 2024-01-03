@@ -4,8 +4,8 @@ export type Day04Card = {
 };
 
 export function day04ParseCard(line: string): Day04Card {
-  const cardSplitString = ": ";
-  const cardNumbersSplitString = " | ";
+  const cardSplitString = /\:\s+/;
+  const cardNumbersSplitString = /\s+\|\s+/;
 
   const [_cardId, numbers] = line.split(cardSplitString);
   const [winningNumbersString, myNumbersString] = numbers.split(
