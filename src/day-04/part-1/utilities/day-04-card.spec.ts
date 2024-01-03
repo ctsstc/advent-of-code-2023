@@ -12,6 +12,19 @@ describe("Day 04 Part 1 > Utility - Card", () => {
         myNumbers: [83, 86, 6, 31, 17, 9, 48, 53],
       });
     });
+
+    describe("edge case card with extra spaces around split characters", () => {
+      const edgeCaseCardExample =
+        "Card 1:  1 48 83 86  7 |  3 86  6 31  1  9 48 53";
+      const edgeCaseCard = day04ParseCard(edgeCaseCardExample);
+
+      it("parses the card correctly", () => {
+        expect(edgeCaseCard).toEqual({
+          winningNumbers: [1, 48, 83, 86, 7],
+          myNumbers: [3, 86, 6, 31, 1, 9, 48, 53],
+        });
+      });
+    });
   });
 
   describe("#day04ScoreCard", () => {
