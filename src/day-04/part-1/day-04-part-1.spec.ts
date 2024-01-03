@@ -9,6 +9,6 @@ describe("Day 04 Part 1", () => {
 
   test("Input", async () => {
     const file = import.meta.resolveSync("./day-04-part-1-input.txt");
-    expect(await SolveDay04Part1(file)).toBe(123);
+    expect(await SolveDay04Part1(file)).toBe(19135);
   });
 });
