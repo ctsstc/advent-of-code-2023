@@ -16,7 +16,7 @@ export default function (plop) {
     ],
     actions: ({ dayNumber }) => {
       const actions = [];
-      const dayRoot = `tests/day-${dayNumber}`;
+      const dayRoot = `src/day-${dayNumber}`;
 
       for (const partNumber of [1, 2]) {
         const partRoot = `${dayRoot}/part-${partNumber}`;
