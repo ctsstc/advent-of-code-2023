@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { getLines } from "../../../utilities/files";
+import { getLines } from "../../utilities/files";
 import { day04ParseCard, day04ScoreCard } from "./day-04-card";
 
 describe("Day 04 Part 1 > Utility - Card", async () => {

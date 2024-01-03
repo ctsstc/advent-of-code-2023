@@ -1,5 +1,5 @@
 import { getLines } from "../../utilities/files";
-import { day04ParseCard, day04ScoreCard } from "./utilities/day-04-card";
+import { day04ParseCard, day04ScoreCard } from "../utilities/day-04-card";
 
 export async function SolveDay04Part1(filePath: string): Promise<number> {
   const lines = await getLines(filePath);
