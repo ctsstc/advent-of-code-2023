@@ -16,7 +16,7 @@ type Day03Collection = {
 };
 
 export function day03ParseLine(line: string, row: number): Day03Collection {
-  const matcher = /\d+|[^.\d]/g;
+  const matcher = /\d+|[^.\d\n]/g;
   const matches = [...line.matchAll(matcher)];
 
   return matches.reduce(
