@@ -70,7 +70,7 @@ describe("Day 03 > Parse Line", () => {
   });
 });
 
-describe.only("Day 03 > Parse Lines", () => {
+describe("Day 03 > Parse Lines", () => {
   const lines = [line, line2, line3];
 
   it("parses all the lines!!!", () => {
