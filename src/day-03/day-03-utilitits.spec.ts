@@ -1,9 +1,15 @@
 import { describe, expect, it } from "bun:test";
-import { day03ParseLine, day03ParseLines } from "./day-03-utilities";
+import {
+  day03ParseLine,
+  day03ParseLines,
+  day03ValidNumbers,
+} from "./day-03-utilities";
 
 const line = "467..114..";
 const line2 = "...*......";
 const line3 = ".123..*.456";
+const lines = [line, line2, line3];
+const collection = day03ParseLines(lines);
 
 describe("Day 03 > Parse Line", () => {
   it("parses the line", () => {
@@ -71,12 +77,8 @@ describe("Day 03 > Parse Line", () => {
 });
 
 describe("Day 03 > Parse Lines", () => {
-  const lines = [line, line2, line3];
-
   it("parses all the lines!!!", () => {
-    const parsed = day03ParseLines(lines);
-
-    expect(parsed).toEqual({
+    expect(collection).toEqual({
       numbers: [
         {
           x: 0,
@@ -114,5 +116,26 @@ describe("Day 03 > Parse Lines", () => {
         },
       ],
     });
+  });
+});
+
+describe("Day 03 > Valid Numbers", () => {
+  it("returns numbers that are near symbols", () => {
+    const validNumbers = day03ValidNumbers(collection);
+
+    expect(validNumbers).toEqual([
+      {
+        x: 0,
+        y: 0,
+        value: 467,
+        length: 3,
+      },
+      {
+        x: 1,
+        y: 2,
+        value: 123,
+        length: 3,
+      },
+    ]);
   });
 });
