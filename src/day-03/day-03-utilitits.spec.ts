@@ -45,7 +45,7 @@ describe("Day 03 > Parse Line", () => {
       numbers: [],
       symbols: [
         {
-          x: 3,
+          x: 4,
           y: 1,
         },
       ],
@@ -111,7 +111,7 @@ describe("Day 03 > Parse Lines", () => {
       ],
       symbols: [
         {
-          x: 3,
+          x: 4,
           y: 1,
         },
         {
