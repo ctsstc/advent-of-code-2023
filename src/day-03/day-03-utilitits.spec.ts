@@ -7,7 +7,7 @@ import {
 
 const line = "467..114..";
 const line2 = "...*......";
-const line3 = ".123..*.456";
+const line3 = ".123..*.456\n";
 const lines = [line, line2, line3];
 const collection = day03ParseLines(lines);
 
