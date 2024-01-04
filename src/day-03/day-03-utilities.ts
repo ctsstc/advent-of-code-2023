@@ -10,13 +10,12 @@ export type Day03Number = Day03Coordinate & {
 
 export type Day03Symbol = Day03Coordinate;
 
-export function day03ParseLine(
-  line: string,
-  row: number
-): {
+type Day03Collection = {
   numbers: Day03Number[];
   symbols: Day03Symbol[];
-} {
+};
+
+export function day03ParseLine(line: string, row: number): Day03Collection {
   const matcher = /\d+|[^.\d]/g;
   const matches = [...line.matchAll(matcher)];
 
@@ -44,6 +43,23 @@ export function day03ParseLine(
           length: valueString.length,
         });
       }
+
+      return collection;
+    },
+    {
+      numbers: [] as Day03Number[],
+      symbols: [] as Day03Symbol[],
+    }
+  );
+}
+
+export function day03ParseLines(lines: string[]): Day03Collection {
+  return lines.reduce(
+    (collection, line, column) => {
+      const { numbers, symbols } = day03ParseLine(line, column);
+
+      collection.numbers.push(...numbers);
+      collection.symbols.push(...symbols);
 
       return collection;
     },
