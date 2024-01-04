@@ -1,4 +1,5 @@
 import { describe, expect, it } from "bun:test";
+import { getLines } from "../utilities/files";
 import {
   day03ParseLine,
   day03ParseLines,
@@ -6,10 +7,13 @@ import {
 } from "./day-03-utilities";
 
 const line = "467..114..";
-const line2 = "...*......";
+const line2 = "....*.....";
 const line3 = ".123..*.456\n";
 const lines = [line, line2, line3];
 const collection = day03ParseLines(lines);
+
+const file = import.meta.resolveSync("./part-1/day-03-part-1-example.txt");
+const fileLines = await getLines(file);
 
 describe("Day 03 > Parse Line", () => {
   it("parses the line", () => {
@@ -125,9 +129,9 @@ describe("Day 03 > Valid Numbers", () => {
 
     expect(validNumbers).toEqual([
       {
-        x: 0,
+        x: 5,
         y: 0,
-        value: 467,
+        value: 114,
         length: 3,
       },
       {
@@ -137,5 +141,13 @@ describe("Day 03 > Valid Numbers", () => {
         length: 3,
       },
     ]);
+  });
+
+  it("returns all numbers from the example except for 2", () => {
+    const collection = day03ParseLines(fileLines);
+    const validNumbers = day03ValidNumbers(collection);
+    const numbers = validNumbers.map((validNumber) => validNumber.value);
+
+    expect(numbers).toEqual([467, 35, 633, 617, 592, 755, 664, 598]);
   });
 });
