@@ -3,12 +3,12 @@ type Day03Coordinate = {
   y: number;
 };
 
-type Day03Number = Day03Coordinate & {
+export type Day03Number = Day03Coordinate & {
   value: number;
   length: number;
 };
 
-type Day03Symbol = Day03Coordinate;
+export type Day03Symbol = Day03Coordinate;
 
 export function day03ParseLine(
   line: string,
