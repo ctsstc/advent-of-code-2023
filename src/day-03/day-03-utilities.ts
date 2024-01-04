@@ -79,7 +79,7 @@ export function day03ValidNumbers(collection: Day03Collection): Day03Number[] {
       //  then the x must be within the number x - 1, through number x + length + 1
 
       const xStartRange = number.x - 1;
-      const xEndRange = number.x + number.length + 1;
+      const xEndRange = number.x + number.length;
       const yStartRange = number.y - 1;
       const yEndRange = number.y + 1;
 
