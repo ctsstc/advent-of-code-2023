@@ -1,5 +1,5 @@
-import { getLines } from "../../utilities/files";
-import { day03ParseLines, day03ValidNumbers } from "../day-03-utilities";
+import { getLines } from "../utilities/files";
+import { day03ParseLines, day03ValidNumbers } from "./day-03-utilities";
 
 /**
  * Idea 1: use regex to grab numbers; might have to count length and initial starting location if possible.
