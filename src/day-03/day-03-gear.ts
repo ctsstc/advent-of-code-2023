@@ -7,8 +7,7 @@ import {
 
 export type Day03ValidGearWithNumbers = {
   gear: Day03Symbol;
-  firstNumber: Day03Number;
-  secondNumber: Day03Number;
+  gearRatio: number;
 };
 
 export function day03ValidGearsWithNumbers(
@@ -17,11 +16,14 @@ export function day03ValidGearsWithNumbers(
   const gears = getGears(collection);
   const validGears = gears.filter((gear) => gear.numbers.length === 2);
 
-  return validGears.map((validGear) => {
+  return validGears.map((gear) => {
+    const firstGearValue = gear.numbers[0].value;
+    const secondGearValue = gear.numbers[1].value;
+    const gearRatio = firstGearValue * secondGearValue;
+
     return {
-      gear: validGear,
-      firstNumber: validGear.numbers[0],
-      secondNumber: validGear.numbers[1],
+      gear,
+      gearRatio,
     };
   });
 }

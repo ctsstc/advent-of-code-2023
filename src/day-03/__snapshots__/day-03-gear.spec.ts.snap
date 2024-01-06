@@ -3,12 +3,6 @@
 exports[`Day 03 > Gear returns valid gears and their numbers 1`] = `
 [
   {
-    "firstNumber": {
-      "length": 3,
-      "value": 467,
-      "x": 0,
-      "y": 0,
-    },
     "gear": {
       "numbers": [
         {
@@ -28,20 +22,9 @@ exports[`Day 03 > Gear returns valid gears and their numbers 1`] = `
       "x": 3,
       "y": 1,
     },
-    "secondNumber": {
-      "length": 2,
-      "value": 35,
-      "x": 2,
-      "y": 2,
-    },
+    "gearRatio": 16345,
   },
   {
-    "firstNumber": {
-      "length": 3,
-      "value": 755,
-      "x": 6,
-      "y": 7,
-    },
     "gear": {
       "numbers": [
         {
@@ -61,12 +44,7 @@ exports[`Day 03 > Gear returns valid gears and their numbers 1`] = `
       "x": 5,
       "y": 8,
     },
-    "secondNumber": {
-      "length": 3,
-      "value": 598,
-      "x": 5,
-      "y": 9,
-    },
+    "gearRatio": 451490,
   },
 ]
 `;
