@@ -12,7 +12,7 @@ const line3 = ".123..*.456\n";
 const lines = [line, line2, line3];
 const collection = day03ParseLines(lines);
 
-const file = import.meta.resolveSync("./part-1/day-03-part-1-example.txt");
+const file = import.meta.resolveSync("./day-03-example.txt");
 const fileLines = await getLines(file);
 
 describe("Day 03 > Parse Line", () => {
