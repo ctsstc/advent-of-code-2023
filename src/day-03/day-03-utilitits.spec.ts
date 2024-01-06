@@ -47,6 +47,7 @@ describe("Day 03 > Parse Line", () => {
         {
           x: 4,
           y: 1,
+          value: "*",
         },
       ],
     });
@@ -74,6 +75,7 @@ describe("Day 03 > Parse Line", () => {
         {
           x: 6,
           y: 2,
+          value: "*",
         },
       ],
     });
@@ -113,10 +115,12 @@ describe("Day 03 > Parse Lines", () => {
         {
           x: 4,
           y: 1,
+          value: "*",
         },
         {
           x: 6,
           y: 2,
+          value: "*",
         },
       ],
     });

@@ -8,9 +8,11 @@ export type Day03Number = Day03Coordinate & {
   length: number;
 };
 
-export type Day03Symbol = Day03Coordinate;
+export type Day03Symbol = Day03Coordinate & {
+  value: string;
+};
 
-type Day03Collection = {
+export type Day03Collection = {
   numbers: Day03Number[];
   symbols: Day03Symbol[];
 };
@@ -35,6 +37,7 @@ export function day03ParseLine(line: string, row: number): Day03Collection {
       if (isSymbol) {
         collection.symbols.push({
           ...coordinate,
+          value: valueString,
         });
       } else {
         collection.numbers.push({
