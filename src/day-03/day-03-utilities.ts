@@ -75,21 +75,28 @@ export function day03ParseLines(lines: string[]): Day03Collection {
 
 export function day03ValidNumbers(collection: Day03Collection): Day03Number[] {
   return collection.numbers.filter((number) => {
-    return collection.symbols.some((symbol) => {
-      // determine if the symbol is within the range of the number
-      // a range is the start position and the end
-      // a symbol must be either on the same line or within 1 line
-      //  then the x must be within the number x - 1, through number x + length + 1
-
-      const xStartRange = number.x - 1;
-      const xEndRange = number.x + number.length;
-      const yStartRange = number.y - 1;
-      const yEndRange = number.y + 1;
-
-      const withinXRange = symbol.x >= xStartRange && symbol.x <= xEndRange;
-      const withinYRange = symbol.y >= yStartRange && symbol.y <= yEndRange;
-
-      return withinXRange && withinYRange;
-    });
+    return collection.symbols.some((symbol) =>
+      day03NumberNextToSymbol(number, symbol)
+    );
   });
+}
+
+export function day03NumberNextToSymbol(
+  number: Day03Number,
+  symbol: Day03Symbol
+): boolean {
+  // determine if the symbol is within the range of the number
+  // a range is the start position and the end
+  // a symbol must be either on the same line or within 1 line
+  //  then the x must be within the number x - 1, through number x + length + 1
+
+  const xStartRange = number.x - 1;
+  const xEndRange = number.x + number.length;
+  const yStartRange = number.y - 1;
+  const yEndRange = number.y + 1;
+
+  const withinXRange = symbol.x >= xStartRange && symbol.x <= xEndRange;
+  const withinYRange = symbol.y >= yStartRange && symbol.y <= yEndRange;
+
+  return withinXRange && withinYRange;
 }
