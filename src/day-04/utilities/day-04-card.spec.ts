@@ -34,14 +34,42 @@ describe("Day 04 Part 1 > Utility - Card", async () => {
 
   describe("#day04ScoreCard", () => {
     it("scores the card", () => {
-      expect(day04ScoreCard(card)).toEqual(8);
+      expect(day04ScoreCard(card)).toEqual({
+        amount: 8,
+        length: 4,
+      });
     });
 
     describe("card collection", () => {
       const cardsScores = cards.map((card) => day04ScoreCard(card));
 
       it("returns the expected scoring for the cards", () => {
-        expect(cardsScores).toEqual([8, 2, 2, 1, 0, 0]);
+        expect(cardsScores).toEqual([
+          {
+            amount: 8,
+            length: 4,
+          },
+          {
+            amount: 2,
+            length: 2,
+          },
+          {
+            amount: 2,
+            length: 2,
+          },
+          {
+            amount: 1,
+            length: 1,
+          },
+          {
+            amount: 0,
+            length: 0,
+          },
+          {
+            amount: 0,
+            length: 0,
+          },
+        ]);
       });
     });
   });

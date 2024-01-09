@@ -29,12 +29,26 @@ function numbersStringToNumbers(numbersString: string): number[] {
     .map((numberString) => parseInt(numberString));
 }
 
-export function day04ScoreCard(card: Day04Card): number {
+export type Day04CardScore = {
+  amount: number;
+  length: number;
+};
+
+export function day04ScoreCard(card: Day04Card): Day04CardScore {
   const unionLength = cardUnion(card).length;
 
-  if (unionLength === 0) return 0;
+  if (unionLength === 0)
+    return {
+      amount: 0,
+      length: 0,
+    };
 
-  return Math.pow(2, unionLength - 1);
+  const amount = Math.pow(2, unionLength - 1);
+
+  return {
+    amount,
+    length: unionLength,
+  };
 }
 
 function cardUnion(card: Day04Card): number[] {

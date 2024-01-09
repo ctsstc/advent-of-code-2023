@@ -1,7 +1,7 @@
-import { Day04Card, day04ScoreCard } from "./day-04-card";
+import { Day04Card, Day04CardScore, day04ScoreCard } from "./day-04-card";
 
 export type Day04ScoredCard = Day04Card & {
-  score: number;
+  score: Day04CardScore;
 };
 
 export function day04ScoredCardsFromCards(
@@ -10,7 +10,7 @@ export function day04ScoredCardsFromCards(
   return cards.map((card) => {
     return {
       ...card,
-      score: day04ScoreCard(card),
+      score: { ...day04ScoreCard(card) },
     };
   });
 }
