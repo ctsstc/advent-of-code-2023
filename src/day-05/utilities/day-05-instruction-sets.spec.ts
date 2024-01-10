@@ -1,5 +1,6 @@
 import { describe, expect, it } from "bun:test";
 import { day05ParseInstructionSets } from "./day-05-instruction-sets";
+import { mockDay05InstructionSets } from "./day-05-instruction-sets.mocks";
 
 describe("Day 05 > Instruction Sets", () => {
   const instructionLines = [
@@ -15,48 +16,6 @@ describe("Day 05 > Instruction Sets", () => {
   const parsed = day05ParseInstructionSets(instructionLines);
 
   it("parses the instruction sets", () => {
-    expect(parsed).toEqual([
-      {
-        header: {
-          from: "seed",
-          to: "soil",
-        },
-        instructions: [
-          {
-            destination: 50,
-            source: 98,
-            range: 2,
-          },
-          {
-            destination: 52,
-            source: 50,
-            range: 48,
-          },
-        ],
-      },
-      {
-        header: {
-          from: "soil",
-          to: "fertilizer",
-        },
-        instructions: [
-          {
-            destination: 0,
-            source: 15,
-            range: 37,
-          },
-          {
-            destination: 37,
-            source: 52,
-            range: 2,
-          },
-          {
-            destination: 39,
-            source: 0,
-            range: 15,
-          },
-        ],
-      },
-    ]);
+    expect(parsed).toEqual(mockDay05InstructionSets);
   });
 });
