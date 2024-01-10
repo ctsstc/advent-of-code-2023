@@ -1,5 +1,5 @@
-import { Day05Header, day05ParseHeader } from "../day-05-header";
-import { Day05Instruction, day05ParseInstruction } from "../day-05-instruction";
+import { Day05Header, day05ParseHeader } from "./day-05-header";
+import { Day05Instruction, day05ParseInstruction } from "./day-05-instruction";
 
 export type Day05InstructionSet = {
   header: Day05Header;
