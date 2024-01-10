@@ -1,10 +1,10 @@
-export type Day05Converter = {
+export type Day05Instruction = {
   source: number;
   destination: number;
   range: number;
 };
 
-export function day05ParseConverter(parserString: string): Day05Converter {
+export function day05ParseInstruction(parserString: string): Day05Instruction {
   const [destinationString, sourceString, rangeString] =
     parserString.split(" ");
 
