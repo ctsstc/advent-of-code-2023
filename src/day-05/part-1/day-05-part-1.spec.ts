@@ -12,6 +12,6 @@ describe("Day 05 Part 1", async () => {
 
   test.skipIf(solveExample !== expectedExample)("Input", async () => {
     const file = import.meta.resolveSync("../day-05-input.txt");
-    expect(await SolveDay05Part1(file)).toBe(123);
+    expect(await SolveDay05Part1(file)).toBe(196167384);
   });
 });
